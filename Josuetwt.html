@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio - Josue_TwT</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #fefefe;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .accent {
+      color: #facc15;
+    }
+    .hero {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), #0d0d0d 90%), url('https://i.ytimg.com/vi/qK7rjAQT2Qg/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGEQgRyhlMA8=&rs=AOn4CLB6pJYB2UQjYdo40hrA681N1XX06A') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+    .gallery-container {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      border: 2px solid #facc15;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      box-shadow: 0 0 15px rgba(250, 204, 21, 0.15);
+      transition: transform 0.3s;
+    }
+    .gallery-container:hover {
+      transform: scale(1.05);
+    }
+    .gallery-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #facc15;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      transition: background-color 0.3s;
+    }
+    .gallery-button:hover {
+      background-color: #eab308;
+    }
+    .left-button {
+      left: 1rem;
+    }
+    .right-button {
+      right: 1rem;
+    }
+    .gallery-slide {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-video {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background-color: #000;
+    }
+    .gallery-video iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+      top: 0;
+      left: 0;
+    }
+    .logo-absolute {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      z-index: 50;
+      height: 150px;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <header class="hero h-[90vh] flex flex-col justify-center items-center text-center px-4 pt-32">
+    <img src="https://i.postimg.cc/44VQm4pD/LOGO.png" alt="Logo" class="logo-absolute">
+    <h1 class="text-6xl font-extrabold accent drop-shadow-lg mb-4">Mis proyectos - Josue_TwT</h1>
+    <p class="text-lg text-gray-200 max-w-3xl">
+      Aviso: algunas imágenes pueden tener mala calidad, pido disculpas por eso. Algunas fotos son tomadas desde un móvil en forma de testeo, pero la mayoría fue programada a computadora.
+    </p>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto px-6 py-28 space-y-32">
+
+    <section data-aos="fade-up">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-bold accent">DINOXSAFIO</h2>
+        <p class="text-gray-300 text-lg mt-4 max-w-3xl mx-auto">
+          Proyecto basado en la serie "Dedsafío". Elaboré animaciones, jefes, mobs, armaduras, ítems, interfaz para nutrias, y más. (Tengo videos sobre las animaciones, si gustas verlos hazmelo saber.) Me encargué de todo el modelado y programación.<br><br>El mob que aparece es un hongo que al explotar dejaba una animación de colores en pantalla. (También cuento con videos de este.) 
+        </p>
+      </div>
+      <div class="gallery-container">
+        <img id="galeria1" class="gallery-slide" src="https://i.postimg.cc/JzD25PWJ/dedita.png" alt="Dinoxsafio">
+        <button onclick="cambiarImagen(1, -1)" class="gallery-button left-button">&#10094;</button>
+        <button onclick="cambiarImagen(1, 1)" class="gallery-button right-button">&#10095;</button>
+      </div>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="100">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-bold accent">RENDERS</h2>
+        <p class="text-gray-300 text-lg mt-4 max-w-3xl mx-auto">
+          Ejemplos de renders que he hecho. Puedo adaptar el estilo a tus preferencias.
+        </p>
+      </div>
+      <div class="gallery-container">
+        <img id="galeria2" class="gallery-slide" src="https://i.postimg.cc/ydgGvjR2/440-sin-t-tulo-20250416191324.png" alt="Renders">
+        <button onclick="cambiarImagen(2, -1)" class="gallery-button left-button">&#10094;</button>
+        <button onclick="cambiarImagen(2, 1)" class="gallery-button right-button">&#10095;</button>
+      </div>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="200">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-bold accent">¡Y MÁS!</h2>
+        <p class="text-gray-300 text-lg mt-4 max-w-3xl mx-auto">
+          Aquí dejo otros ejemplos de cosas que he hecho: modelos, animaciones, skins, etc.
+        </p>
+      </div>
+      <div class="gallery-container" id="galeria3-container">
+        <div id="galeria3-content"></div>
+        <button onclick="cambiarImagen(3, -1)" class="gallery-button left-button">&#10094;</button>
+        <button onclick="cambiarImagen(3, 1)" class="gallery-button right-button">&#10095;</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t border-gray-700 text-sm text-gray-500">
+    © 2025 Josue_TwT
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const imagenes = {
+      1: [
+        "https://i.postimg.cc/JzD25PWJ/dedita.png",
+        "https://i.postimg.cc/Jzfd6Z1F/dedita2.png",
+        "https://i.postimg.cc/43p2ryyx/IMG-20241217-WA0059-1.jpg",
+        "https://i.postimg.cc/bwdNqcfn/IMG-20241217-WA0058.jpg",
+        "https://i.postimg.cc/mDRpR41N/Screenshot-20241205-154629.png",
+        "https://i.postimg.cc/q7rx6LBp/279-sin-t-tulo-20241215223931.png",
+        "https://i.postimg.cc/hG0bLdhT/Screenshot-20250624-154901.png"
+      ],
+      2: [
+        "https://i.postimg.cc/ydgGvjR2/440-sin-t-tulo-20250416191324.png",
+        "https://i.postimg.cc/9QbsMrVg/507-sin-t-tulo-20250416191309.png",
+        "https://i.postimg.cc/YSyV6Zv1/517-sin-t-tulo-20250425203848.png",
+        "https://i.postimg.cc/rs5PLpQJ/521-sin-t-tulo-20250423185853.png",
+        "https://i.postimg.cc/bNj59QwF/525-sin-t-tulo-20250427005519.png",
+        "https://i.postimg.cc/59zGzPbC/535-sin-t-tulo-20250429202436.png",
+        "https://i.postimg.cc/Qt2yP7kC/552-sin-t-tulo-20250511121035.png",
+        "https://i.postimg.cc/x1fFWnHv/591-sin-t-tulo-20250616202612.png",
+        "https://i.postimg.cc/6QTbpcMT/image-109.png",
+        "https://i.postimg.cc/9Ftn8r4X/image-75.png",
+        "https://i.postimg.cc/sgstspFZ/Render1-1.png",
+        "https://i.postimg.cc/W44CJT1N/rivalcraft.png"
+      ],
+      3: [
+        { type: "video", src: "https://streamable.com/e/b83kbd?" },
+        { type: "video", src: "https://streamable.com/e/dudjlu?" },
+        { type: "video", src: "https://streamable.com/e/pzw27w?" },
+        { type: "image", src: "https://i.postimg.cc/k5KVd3Wc/IMG-20250111-WA0001.jpg" },
+        { type: "image", src: "https://i.postimg.cc/C10RhPNV/IMG-20250111-WA0004.jpg" },
+        { type: "image", src: "https://i.postimg.cc/y8FB1Vrk/IMG-20250111-WA0003.jpg" }
+      ]
+    };
+    const indices = { 1: 0, 2: 0, 3: 0 };
+    function cambiarImagen(galeria, direccion) {
+      indices[galeria] = (indices[galeria] + direccion + imagenes[galeria].length) % imagenes[galeria].length;
+      if (galeria === 3) {
+        const contenedor = document.getElementById("galeria3-content");
+        contenedor.innerHTML = "";
+        const item = imagenes[3][indices[3]];
+        if (item.type === "video") {
+          const wrapper = document.createElement("div");
+          wrapper.className = "gallery-video";
+          wrapper.innerHTML = `<iframe allowfullscreen src="${item.src}"></iframe>`;
+          contenedor.appendChild(wrapper);
+        } else if (item.type === "image") {
+          const img = document.createElement("img");
+          img.src = item.src;
+          img.alt = "UI personalizada";
+          img.className = "gallery-slide";
+          contenedor.appendChild(img);
+        }
+      } else {
+        document.getElementById(`galeria${galeria}`).src = imagenes[galeria][indices[galeria]];
+      }
+    }
+    window.onload = () => cambiarImagen(3, 0);
+  </script>
+</body>
+</html>
